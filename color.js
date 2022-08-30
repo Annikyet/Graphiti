@@ -12,12 +12,15 @@ export class Color {
   }
 
   /**
-   * Returns the 15-bit encoded color for rgb values (0-31)
-   * @param {number} red Red value from 0-31
-   * @param {number} green Green value from 0-31
-   * @param {number} blue Blue value from 0-31
+   * Returns the 15-bit encoded color for rgb values (0-255)
+   * @param {number} red Red value from 0-255
+   * @param {number} green Green value from 0-255
+   * @param {number} blue Blue value from 0-255
    */
   static rgbToFifteen(red, green, blue) {
-
+    let fifteenColor = Math.floor(red >> 3) << 10
+    fifteenColor |= Math.floor(green >> 3) << 5
+    fifteenColor |= Math.floor(blue >> 3)
+    return fifteenColor
   }
 }

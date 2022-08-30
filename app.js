@@ -22,5 +22,10 @@ c.beginPath()
 // create dummy scanline
 let myScanline = []
 for (let x = 0; x < 384; x++) {
-  
+  myScanline[x] = Color.rgbToFifteen(127 - (x / 3), 0, x / 3)
+}
+
+// draw dummy screen
+for (let y = 0; y < 216; y++) {
+  drawScanline(y, myScanline)
 }
