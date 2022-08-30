@@ -6,9 +6,15 @@ export class Color {
    */
   static fifteenToHex(fifteenColor = 0) {
     let red = (31744 & fifteenColor) >> 7
+    let redHex = red.toString(16)
+    redHex.length < 2 ? redHex = '0' + redHex : redHex = redHex
     let green = (992 & fifteenColor) >> 2
+    let greenHex = green.toString(16)
+    greenHex.length < 2 ? greenHex = '0' + greenHex : greenHex = greenHex
     let blue = (31 & fifteenColor) << 3
-    return '#' + red.toString(16) + green.toString(16) + blue.toString(16)
+    let blueHex = blue.toString(16)
+    blueHex.length < 2 ? blueHex = '0' + blueHex : blueHex = blueHex
+    return '#' + redHex + greenHex + blueHex
   }
 
   /**
