@@ -26,20 +26,14 @@ c?.beginPath()
 let myScanline = []
 let tileY = 0
 let tileX = 0
+let paletteColor = 0
 for (let y = 0; y < 216; y++) {
   tileY = y % Terra.tile.length
-  // console.log(tileY)
+
   for (let x = 0; x < 384; x++) {
     tileX = x % Terra.tile[0].length
-    // console.log(tileX);
-    myScanline[x] = Terra.palette[Terra.tile[tileY][tileX]]
+    paletteColor = Terra.tile[tileY][tileX]
+    myScanline[x] = Terra.palette[paletteColor]
   }
   drawScanline(y, myScanline, c)
 }
-
-// draw dummy screen
-// for (let y = 0; y < 216; y++) {
-//   drawScanline(y, myScanline, c)
-// }
-
-// console.log(Terra.palette[3])
